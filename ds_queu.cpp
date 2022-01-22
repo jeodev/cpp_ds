@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-const int SIZE = 5;
+const int SIZE = 3;
 class Queue{
     private:
         int holder[SIZE];
@@ -50,6 +50,7 @@ bool Queue::isFull(){
 
 void Queue::Enqueue(int value){
     if(isFull()){
+        cout << "Queue is full" << endl;
         return;
     }else if(isEmpty()){
         front = rear = 0;
@@ -105,9 +106,11 @@ int main(){
 
         switch(option){
             case 1:
-                cout << "Enter the value: ";
-                cin >> value;
-                queue.Enqueue(value);
+                if(!queue.isFull()){
+                    cout << "Enter the value: ";
+                    cin >> value;
+                    queue.Enqueue(value);
+                }
                 break;
             case 2:
                 cout << "Dequeue: " << queue.Dequeue() << endl;

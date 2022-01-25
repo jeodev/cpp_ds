@@ -93,7 +93,6 @@ void SingleLinkedList::display(){
 
 int main(){
 
-    Node* node = new Node();
     SingleLinkedList s;
     int ke_y, dat_a, option;
     ke_y = dat_a = 0;
@@ -106,6 +105,7 @@ int main(){
         cout << "Select: ";
         cin >> option;
 
+        Node* node = new Node();
         switch(option){
             case 1:
                 cout << "Enter the key : ";
